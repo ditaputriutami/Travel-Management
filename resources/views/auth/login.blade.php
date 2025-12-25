@@ -13,7 +13,7 @@
         <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
             <!-- Logo/Header -->
             <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-blue-600 mb-2">Kembang Lestari</h1>
+                <h1 class="text-3xl font-bold text-blue-600 mb-2">Kembang Lestari Travel</h1>
                 <p class="text-gray-600">Sistem Informasi Akuntansi Kas</p>
             </div>
 
@@ -67,25 +67,11 @@
                 </div>
 
                 <!-- Submit Button -->
-                <button type="submit" class="btn btn-primary w-full mt-6">
+                <button type="submit" class="btn btn-primary w-full mt-6 flex items-center justify-center">
                     Masuk
                 </button>
             </form>
 
-            <!-- Register Link -->
-            <p class="text-center text-gray-600 mt-6">
-                Belum punya akun?
-                <a href="{{ route('register') }}" class="text-blue-600 font-semibold hover:text-blue-800">
-                    Daftar di sini
-                </a>
-            </p>
-
-            <!-- Demo Credentials -->
-            <div class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg text-sm">
-                <p class="font-semibold text-blue-900 mb-2">Demo Credentials:</p>
-                <p class="text-blue-800">Email: <code class="bg-white px-2 py-1 rounded">admin@kembang-lestari.com</code></p>
-                <p class="text-blue-800">Password: <code class="bg-white px-2 py-1 rounded">password123</code></p>
-            </div>
         </div>
     </div>
 </body>
