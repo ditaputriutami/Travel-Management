@@ -18,7 +18,7 @@ class DashboardController extends Controller
         $totalKategori = KategoriTransport::count();
 
         // Total orders
-        $totalOrder = Order::count();
+        $totalOrders = Order::count();
 
         // Total revenue
         $totalPendapatan = Order::where('status', '!=', 'dibatalkan')
@@ -27,6 +27,9 @@ class DashboardController extends Controller
         // Total operational costs in last 30 days
         $totalBiaya = BiayaOperasional::where('tanggal', '>=', now()->subDays(30))
             ->sum('nominal');
+
+        // Calculate profit (total keuntungan)
+        $totalKeuntungan = $totalPendapatan - $totalBiaya;
 
         // Revenue for last 6 months
         $revenueData = $this->getRevenueByMonth();
@@ -51,9 +54,10 @@ class DashboardController extends Controller
 
         return view('dashboard', [
             'totalKategori' => $totalKategori,
-            'totalOrder' => $totalOrder,
+            'totalOrders' => $totalOrders,
             'totalPendapatan' => $totalPendapatan,
             'totalBiaya' => $totalBiaya,
+            'totalKeuntungan' => $totalKeuntungan,
             'revenueData' => $revenueData,
             'revenueDataJson' => json_encode($revenueData),
             'profitLossData' => $profitLossData,

@@ -29,6 +29,12 @@ export default {
             borderRadius: {
                 xl: "1rem",
             },
+            backgroundImage: {
+                "gradient-sidebar":
+                    "linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #ec4899 100%)",
+                "gradient-primary":
+                    "linear-gradient(to right, #4f46e5, #7c3aed)",
+            },
         },
     },
     plugins: [],

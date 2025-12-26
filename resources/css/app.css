@@ -17,7 +17,7 @@
     }
 
     .btn-primary {
-        @apply px-4 py-2 rounded-lg font-medium transition duration-200 inline-flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 active:scale-95;
+        @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white hover:from-blue-700 hover:to-cyan-700 active:scale-95 shadow-lg hover:shadow-xl;
     }
 
     .btn-secondary {
