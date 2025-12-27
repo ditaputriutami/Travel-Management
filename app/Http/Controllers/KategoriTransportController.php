@@ -32,8 +32,16 @@ class KategoriTransportController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'nama_kategori' => 'required|string|unique:kategori_transports|max:255',
-            'kapasitas' => 'required|integer|min:1',
+            'kode_kendaraan' => 'required|string|unique:kategori_transports|max:255',
+            'nomor_polisi' => 'required|string|unique:kategori_transports|max:255',
+            'jenis_kendaraan' => 'required|in:mobil,bus',
+            'merk_tipe' => 'required|string|max:255',
+            'tahun_kendaraan' => 'required|integer|min:1900|max:' . (date('Y') + 1),
+            'kapasitas_penumpang' => 'required|integer|min:1',
+            'status_kendaraan' => 'required|in:tersedia,disewa,perawatan',
+            'tarif_12_jam' => 'required|numeric|min:0',
+            'tarif_24_jam' => 'required|numeric|min:0',
+            'tarif_overtime_per_jam' => 'nullable|numeric|min:0',
             'deskripsi' => 'nullable|string',
         ]);
 
@@ -66,8 +74,16 @@ class KategoriTransportController extends Controller
     public function update(Request $request, KategoriTransport $kategoriTransport): RedirectResponse
     {
         $validated = $request->validate([
-            'nama_kategori' => 'required|string|unique:kategori_transports,nama_kategori,' . $kategoriTransport->id . '|max:255',
-            'kapasitas' => 'required|integer|min:1',
+            'kode_kendaraan' => 'required|string|unique:kategori_transports,kode_kendaraan,' . $kategoriTransport->id . '|max:255',
+            'nomor_polisi' => 'required|string|unique:kategori_transports,nomor_polisi,' . $kategoriTransport->id . '|max:255',
+            'jenis_kendaraan' => 'required|in:mobil,bus',
+            'merk_tipe' => 'required|string|max:255',
+            'tahun_kendaraan' => 'required|integer|min:1900|max:' . (date('Y') + 1),
+            'kapasitas_penumpang' => 'required|integer|min:1',
+            'status_kendaraan' => 'required|in:tersedia,disewa,perawatan',
+            'tarif_12_jam' => 'required|numeric|min:0',
+            'tarif_24_jam' => 'required|numeric|min:0',
+            'tarif_overtime_per_jam' => 'nullable|numeric|min:0',
             'deskripsi' => 'nullable|string',
         ]);
 

@@ -19,27 +19,59 @@ class DatabaseSeeder extends Seeder
     {
         // Seed Kategori Transport
         KategoriTransport::create([
-            'nama_kategori' => 'Bus Pariwisata 50 seat',
-            'kapasitas' => 50,
+            'kode_kendaraan' => 'BUS001',
+            'nomor_polisi' => 'B 1234 ABC',
+            'jenis_kendaraan' => 'bus',
+            'merk_tipe' => 'Mercedes Benz OH 1526',
+            'tahun_kendaraan' => 2020,
+            'kapasitas_penumpang' => 50,
+            'status_kendaraan' => 'tersedia',
+            'tarif_12_jam' => 1500000,
+            'tarif_24_jam' => 2500000,
+            'tarif_overtime_per_jam' => 150000,
             'deskripsi' => 'Bus besar untuk perjalanan jarak jauh dengan fasilitas lengkap',
         ]);
 
         KategoriTransport::create([
-            'nama_kategori' => 'Hiace 15 seat',
-            'kapasitas' => 15,
+            'kode_kendaraan' => 'VAN001',
+            'nomor_polisi' => 'B 5678 DEF',
+            'jenis_kendaraan' => 'mobil',
+            'merk_tipe' => 'Toyota Hiace',
+            'tahun_kendaraan' => 2021,
+            'kapasitas_penumpang' => 15,
+            'status_kendaraan' => 'tersedia',
+            'tarif_12_jam' => 700000,
+            'tarif_24_jam' => 1200000,
+            'tarif_overtime_per_jam' => 80000,
             'deskripsi' => 'Van medium untuk group kecil dan menengah',
         ]);
 
         KategoriTransport::create([
-            'nama_kategori' => 'Avanza 7 seat',
-            'kapasitas' => 7,
+            'kode_kendaraan' => 'MPV001',
+            'nomor_polisi' => 'B 9012 GHI',
+            'jenis_kendaraan' => 'mobil',
+            'merk_tipe' => 'Toyota Avanza',
+            'tahun_kendaraan' => 2022,
+            'kapasitas_penumpang' => 7,
+            'status_kendaraan' => 'tersedia',
+            'tarif_12_jam' => 300000,
+            'tarif_24_jam' => 500000,
+            'tarif_overtime_per_jam' => 50000,
             'deskripsi' => 'Mobil keluarga untuk rombongan kecil',
         ]);
 
         KategoriTransport::create([
-            'nama_kategori' => 'Mobil Elf 20 seat',
-            'kapasitas' => 20,
-            'deskripsi' => 'Bus sedang untuk perjalanan mengenai dan regional',
+            'kode_kendaraan' => 'ELF001',
+            'nomor_polisi' => 'B 3456 JKL',
+            'jenis_kendaraan' => 'bus',
+            'merk_tipe' => 'Isuzu Elf',
+            'tahun_kendaraan' => 2019,
+            'kapasitas_penumpang' => 20,
+            'status_kendaraan' => 'tersedia',
+            'tarif_12_jam' => 900000,
+            'tarif_24_jam' => 1500000,
+            'tarif_overtime_per_jam' => 100000,
+            'deskripsi' => 'Bus sedang untuk perjalanan menengah dan regional',
         ]);
 
         // Seed Akun Akuntansi

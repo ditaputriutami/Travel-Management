@@ -15,6 +15,10 @@ class Order extends Model
         'no_telp',
         'tanggal_sewa',
         'tanggal_selesai',
+        'durasi_sewa',
+        'tarif_dasar',
+        'jam_overtime',
+        'biaya_overtime',
         'total_biaya',
         'uang_muka',
         'denda',
@@ -26,6 +30,8 @@ class Order extends Model
     protected $casts = [
         'tanggal_sewa' => 'date',
         'tanggal_selesai' => 'date',
+        'tarif_dasar' => 'decimal:2',
+        'biaya_overtime' => 'decimal:2',
         'total_biaya' => 'decimal:2',
         'uang_muka' => 'decimal:2',
         'denda' => 'decimal:2',
@@ -54,6 +60,18 @@ class Order extends Model
     {
         $total = $this->total_biaya + $this->denda;
         return $total - $this->uang_muka;
+    }
+
+    /**
+     * Get durasi label
+     */
+    public function getDurasiLabel()
+    {
+        return match ($this->durasi_sewa) {
+            '12_jam' => '12 Jam (Half Day)',
+            '24_jam' => '24 Jam (Full Day)',
+            default => $this->durasi_sewa,
+        };
     }
 
     /**
